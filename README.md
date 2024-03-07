@@ -13,3 +13,5 @@ is relevant to the user. In this current project, I have used a folder called *T
 hold the data that will be needed for the user to have a conversation with the chatbot that 
 concerns Pokemon. It is a Japanese media franchise consisting of video games, animated series
 and films, a trading card game, and other related media. 
+
+The *Text_PDFs* folder 
