@@ -24,7 +24,7 @@ hold the data that will be needed for the user to have a conversation with the c
 concerns Pokemon. It is a Japanese media franchise consisting of video games, animated series
 and films, a trading card game, and other related media. 
 
-The main concern when training the chatbot using AWS is the amount of cost incurred.
+The main concern when developing and using this chatbot is the possible amount of cost incurred.
 I used the Pokemon PDFs to serve relevant information to user queries, which is held in a 
 Serverless Vector store in Amazon OpenSearch. The huge caveat with the solution for this chatbot,
 run through AWS, is the amount of pay-for-use costs that are incurred. Initially, I was 
