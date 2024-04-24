@@ -93,4 +93,6 @@ services are used to mirror the above workflows:
 * Amazon OpenSearch - Vector Store
 * Amazon Bedrock + AWS Lambda - Embeddings Model
 
-# RAG Architecture
+# Setup Instructions
+
+
