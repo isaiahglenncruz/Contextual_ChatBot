@@ -6,23 +6,34 @@ This chatbot allows a user to have deeper conversations by usage of internal kno
 bases. For example, a user could have a conversation with a chatbot while browsing movies 
 to watch, and a chatbot could suggest movies to a user that are relevant to their previous 
 genres and high ratings. In the real world, chatbots are able to deliver industrial value by
-incorporating information into generation of responses. 
+incorporating information into response generation.
 
-# Motive
+### Motive
 
-The problem of managing the development and deployment of large applications is  
-addressed by Amazon Web Services (AWS). AWS aims to streamline the development and 
-deployment process by employing the Microservices model . The model involves breaking down the one large 
-application into smaller, independent services that work together to fulfill the developer's 
-intended function. 
+The problem of managing the development and deployment of large applications is addressed by 
+Amazon Web Services (AWS). AWS aims to streamline the development and deployment process by 
+employing the Microservices model . The model involves breaking down the one large application 
+into smaller, independent services that work together to fulfill the developer's intended function. 
+
+I wanted to learn about LLMs and RAG while learning more about the AWS Microservices out there,
+so I decided to start this project.
 
 The microservice model allows for these advantages:
 
-* Scalability: Microservices can be independently scaled, allowing specific components to handle varying levels of load, optimizing resource usage.
-* Flexibility: Developers can choose different programming languages, frameworks, and technologies for each microservice, enabling flexibility and innovation.
-* Resilience: Failure in one microservice doesn't necessarily bring down the entire system, as other services can continue to function independently.
-* Easy Maintenance: With smaller, focused services, it's easier to understand, test, and maintain codebases, leading to faster development cycles and easier updates.
-* Autonomy: Teams can work on and deploy microservices independently, fostering autonomy and speeding up development and deployment processes.
+* Scalability: Microservices can be independently scaled, allowing specific components to handle 
+varying levels of load, optimizing resource usage.
+
+* Flexibility: Developers can choose different programming languages, frameworks, and technologies 
+for each microservice, enabling flexibility and innovation.
+
+* Resilience: Failure in one microservice doesn't necessarily bring down the entire system, as 
+other services can continue to function independently.
+
+* Easy Maintenance: With smaller, focused services, it's easier to understand, test, and maintain 
+codebases, leading to faster development cycles and easier updates.
+
+* Autonomy: Teams can work on and deploy microservices independently, fostering autonomy and speeding 
+up development and deployment processes.
 
 # *Read Before Following Chatbot Setup Instructions*
 
