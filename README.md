@@ -10,9 +10,9 @@ incorporating information into generation of responses.
 
 # Motive
 
-The problem of managing the development and deployment of many applications is something 
-that is tackled by Amazon Web Services (AWS). AWS aims to streamline the development and 
-deployment process by employing the Microservices Model. This involves breaking down the one large 
+The problem of managing the development and deployment of large applications is  
+addressed by Amazon Web Services (AWS). AWS aims to streamline the development and 
+deployment process by employing the Microservices model . The model involves breaking down the one large 
 application into smaller, independent services that work together to fulfill the developer's 
 intended function. 
 
