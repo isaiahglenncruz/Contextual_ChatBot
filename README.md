@@ -95,6 +95,24 @@ services are used to mirror the above workflows:
 
 # Setup Instructions
 
+Creating this project will not be possible as your AWS account's root user. You must be 
+logged into an IAM role.
+
+Clone the RAG_Chatbot repository into your desired directory.
+
 ### Creating our Dataset
 
+1. Navigate to the Amazon S3 console. Choose **Buckets** under the *navigation* panel.
+
+2. **Create bucket** and name it `knowledgebase-<aws-account-number>`.
+
+3. Leave settings for this bucket as default, press **Create**.
+
+4. Move to the `knowledgebase-<aws-account-number>` bucket, choose **Create folder** and name it `dataset`. Leave all folder settings as default, press **Create**.
+
+5. Upload the files in this repository's *Text_PDFs* folder to the bucket's `dataset` folder.
+
+6. Move back to the bucket home, choose **Create folder** and name it `lambdalayer`. Leave all folder settings as default, press **Create**.
+
+7. Upload the `knowledgebase-lambdalayer.zip` file from this repository's *lambda_layer* folder to the bucket's `lambdalayer` folder. Do not unzip the file!
 
