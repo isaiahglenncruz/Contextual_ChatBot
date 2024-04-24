@@ -8,8 +8,7 @@ region = boto3.Session().region_name
 session = boto3.Session(region_name=region)
 lambda_client = session.client('lambda')
 
-st.title("Pokemon Informational Chatbot using Knowledge Bases for Amazon Bedrock")
-
+st.title("Pokemon Informational Chatbot Using Knowledge Bases for Amazon Bedrock")
 sessionId = ""
 #sessionId = ''.join(random.choices(string.ascii_uppercase + string.digits, k=12))
 print(sessionId)
