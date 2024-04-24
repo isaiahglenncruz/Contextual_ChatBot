@@ -22,31 +22,31 @@ so I decided to start this project.
 
 The microservice model allows for these advantages:
 
-* Scalability: Microservices can be independently scaled, allowing specific components to handle 
+* **Scalability**: Microservices can be independently scaled, allowing specific components to handle 
 varying levels of load, optimizing resource usage.
 
-* Flexibility: Developers can choose different programming languages, frameworks, and technologies 
+* **Flexibility**: Developers can choose different programming languages, frameworks, and technologies 
 for each microservice, enabling flexibility and innovation.
 
-* Resilience: Failure in one microservice doesn't necessarily bring down the entire system, as 
+* **Resilience**: Failure in one microservice doesn't necessarily bring down the entire system, as 
 other services can continue to function independently.
 
-* Easy Maintenance: With smaller, focused services, it's easier to understand, test, and maintain 
+* **Easy Maintenance**: With smaller, focused services, it's easier to understand, test, and maintain 
 codebases, leading to faster development cycles and easier updates.
 
-* Autonomy: Teams can work on and deploy microservices independently, fostering autonomy and speeding 
+* **Autonomy**: Teams can work on and deploy microservices independently, fostering autonomy and speeding 
 up development and deployment processes.
 
 # *Read Before Following Chatbot Setup Instructions*
 
-* Notice: PDF Usage
+* **Notice: Possibility for Arbitrary PDF Usage**
 
 The *Text_PDFs* folder will contain files that the user will need to provide to the AWS S3
 Bucket in order to train the chatbot. They are able to be replaced with any kind of PDF that
 concerns information for the user to use, such as an encyclopedia, dictionary, or instructional
 pamphlet.
 
-* Caveat: Cost
+* **Caveat: COST**
 
 This chatbot uses a high level of back-end processing power to utilize a knowledge base that
 is relevant to the user. In this current project, I have used a folder called *Text_PDFs* to 
@@ -61,7 +61,7 @@ run through AWS, is the amount of pay-for-use costs that are incurred. Initially
 completely unaware of the cost to be incurred with the use of those Pokemon PDFs, so I allowed
 the OpenSearch vector store to process those PDFs for user query for a total of 7 hours. This
 training cost was not much, but the amount of resources created by Amazon OpenSearch is high
-enough to passively pass the AWS Free Tier pricing range. AWS OpenSearch incurred about $9 for 
+enough to passively pass the AWS Free Tier pricing range. AWS OpenSearch incurred about $21 for 
 two days of chatbot runtime, which I was not happy about paying because of my initial lack of 
 cost management awareness.
 
