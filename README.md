@@ -90,7 +90,7 @@ manage their created application using tools in conjunction with one another. In
 services are used to mirror the above workflows:
 
 * Amazon S3 - Data Source
-* Amazon OpenSearch - Vector Store
+* Amazon OpenSearch - Knowledgebase Vector Store
 * Amazon Bedrock + AWS Lambda - Embeddings Model
 
 # Setup Instructions
@@ -101,18 +101,59 @@ logged into an IAM role.
 Clone the RAG_Chatbot repository into your desired directory.
 
 ### Creating our Dataset
+We will set up an S3 bucket to serve our knowledgebase.
 
 1. Navigate to the Amazon S3 console. Choose **Buckets** under the *navigation* panel.
 
-2. **Create bucket** and name it `knowledgebase-<aws-account-number>`.
+2. **Create bucket** and name it `knowledgebase-<aws-account-number>`, with the AWS
+account number being your own account's account number.
 
 3. Leave settings for this bucket as default, press **Create**.
 
-4. Move to the `knowledgebase-<aws-account-number>` bucket, choose **Create folder** and name it `dataset`. Leave all folder settings as default, press **Create**.
+4. Move to the `knowledgebase-<aws-account-number>` bucket, choose **Create folder** and
+name it `dataset`. Leave all folder settings as default, press **Create**.
 
-5. Upload the files in this repository's *Text_PDFs* folder to the bucket's `dataset` folder.
+5. Upload the files in this repository's *Text_PDFs* folder to the bucket's `dataset`
+folder. The files I have provided concern Pokemon, but you can provide any kind of
+PDFs that you would like.
 
-6. Move back to the bucket home, choose **Create folder** and name it `lambdalayer`. Leave all folder settings as default, press **Create**.
+6. Move back to the bucket home, choose **Create folder** and name it `lambdalayer`. Leave
+all folder settings as default, press **Create**.
 
-7. Upload the `knowledgebase-lambdalayer.zip` file from this repository's *lambda_layer* folder to the bucket's `lambdalayer` folder. Do not unzip the file!
+7. Upload the `knowledgebase-lambdalayer.zip` file from this repository's *lambda_layer*
+folder to the bucket's `lambdalayer` folder. Do not unzip the file!
 
+### Creating our Knowledgebase
+Using the previously created S3 bucket, we will create a knowledgebase.
+
+1. Navigate to the Amazon Bedrock console. Choose **Orchestration** under the *navigation*
+panel, and click on **Knowledge base**. Click on **Create Knowledge base**. You can 
+provide it any name you would like. In the *IAM permissions* section, you will need to 
+**Create and use a new service role** for which you will provide a name for. Here you
+can also create tags for resource tracking. Click **Next**.
+
+2. Leave *Data source name* as default.
+
+3. Choose the S3 bucket `knowledgebase-<aws-account-number>` that you created earlier. 
+Leave all other settings default, unless you would like to change any chunk loading 
+strategies for higher amounts of data. Click **Next**
+
+4. For the **Embeddings model**, click on **Titan Embedding G1 - Text**. For the 
+**Vector database**, select **Quick create a new vector store**. Click **Next**, then 
+scroll down and click **Create knowledge base**.
+
+5. This process may take minutes to even hours. *HUGE* caution - using the Pokemon PDFs,
+this process took a total of 5 hours. This will incur huge amounts of costs, so you may
+want to provide your own PDFs. If you close the current tab, creation will fail. When
+the knowledge base status is `ready`, write down the knowledge base ID.
+
+![iddd](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/89ecd11d-29c5-44ac-9caa-2091f31dbd20)
+
+6. In the *Data Source* section of the knowledge base's details page, click *Sync* to 
+begin feeding the data from the S3 bucket into this knowledge base. The `Ready` status
+will appear once ingestion is finished, so if you add any more files to the bucket,
+then you will have to *Sync* again.
+
+![readdd](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/c693a7e0-4f5d-498b-ace0-e5f699527314)
+
+7. The above status should show up in the *Data Source* section of the knowledge base.
