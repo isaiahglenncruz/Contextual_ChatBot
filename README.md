@@ -24,7 +24,7 @@ The microservice model allows for these advantages:
 * Easy Maintenance: With smaller, focused services, it's easier to understand, test, and maintain codebases, leading to faster development cycles and easier updates.
 * Autonomy: Teams can work on and deploy microservices independently, fostering autonomy and speeding up development and deployment processes.
 
-# Read Before Following Chatbot Setup Instructions
+# *Read Before Following Chatbot Setup Instructions*
 
 * Notice: PDF Usage
 
@@ -90,17 +90,17 @@ manage their created application using tools in conjunction with one another. In
 services are used to mirror the above workflows:
 
 * Amazon S3 - Data Source
-* Amazon OpenSearch - Knowledgebase Vector Store
+* Amazon OpenSearch - Knowledge base's Vector Store
 * Amazon Bedrock + AWS Lambda - Embeddings Model
 
-# Setup Instructions
+# *Setup Instructions*
 
 Creating this project will not be possible as your AWS account's root user. You must be 
 logged into an IAM role.
 
 Clone the RAG_Chatbot repository into your desired directory.
 
-### Creating our Dataset
+### Dataset Setup
 We will set up an S3 bucket to serve our knowledgebase.
 
 1. Navigate to the Amazon S3 console. Choose **Buckets** under the *navigation* panel.
@@ -123,7 +123,7 @@ all folder settings as default, press **Create**.
 7. Upload the `knowledgebase-lambdalayer.zip` file from this repository's *lambda_layer*
 folder to the bucket's `lambdalayer` folder. Do not unzip the file!
 
-### Creating our Knowledgebase
+### Knowledge base Setup
 Using the previously created S3 bucket, we will create a knowledgebase.
 
 1. Navigate to the Amazon Bedrock console. Choose **Orchestration** under the *navigation*
@@ -157,3 +157,36 @@ then you will have to *Sync* again.
 ![readdd](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/c693a7e0-4f5d-498b-ace0-e5f699527314)
 
 7. The above status should show up in the *Data Source* section of the knowledge base.
+
+### Lambda Function Setup
+Every time a user creates a query, this Lambda function is triggered.
+
+1. Navigate to the AWS CloudFormation home page. Click **Create Stack**. Under **Prepare
+Template**, select *Template is ready*. Select *Upload the template file* under **Template
+Source**, and choose `DeployKnowledgeBase.yaml` from this repository. Click **Next**.
+
+2. Provide any name to the Stack, the Knowledge base's ID, and your S3 bucket's name. Leave
+all defaults the same, click **Next**, and **Submit**. If there are no errors, then the
+application is ready to be tested.
+
+### Testing!
+All the microservices have been set up, so we can integrate them with our local environment
+now.
+
+1. In a new terminal window, run
+
+`pip install boto3`
+
+to install the AWS SDK for Python.
+
+2. Run
+
+`pip install streamlit` 
+
+to set up an environment for the Streamlit application to run on.
+
+3. Navigate to the GitHub repository's root, and run
+
+`python -m streamlit run chatbot.py`
+
+to open an application hosted by Streamlit in your Internet browser.
