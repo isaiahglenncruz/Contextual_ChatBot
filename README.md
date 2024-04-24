@@ -35,6 +35,8 @@ enough to passively pass the AWS Free Tier pricing range. AWS OpenSearch incurre
 two days of chatbot runtime, which I was not happy about paying because of my initial lack of 
 cost management awareness.
 
+Now, for an overview and explanation of RAG architecture.
+
 # RAG Architecture
 
 ![jumpstart-fm-rag](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/3006e44b-a3f9-459e-9d27-d511a0bacbd2)
