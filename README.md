@@ -1,5 +1,3 @@
-# Description
-
 This is a chatbot application that provides users with deeper, personalized responses 
 based on the capabilities of large language models processed by Amazon Bedrock.
 This chatbot allows a user to have deeper conversations by usage of internal knowledge 
@@ -8,7 +6,7 @@ to watch, and a chatbot could suggest movies to a user that are relevant to thei
 genres and high ratings. In the real world, chatbots are able to deliver industrial value by
 incorporating information into response generation.
 
-### Motive
+# Motive
 
 The problem of managing the development and deployment of large applications is addressed by 
 Amazon Web Services (AWS). AWS aims to streamline the development and deployment process by 
@@ -65,7 +63,7 @@ cost management awareness.
 
 Now, for an overview and explanation of RAG architecture.
 
-# RAG Architecture
+### RAG Architecture
 
 Retrieval Augmented Generation (RAG) is an advanced approach in artificial intelligence that enhances 
 the capabilities of natural language processing models by integrating two key components: 
