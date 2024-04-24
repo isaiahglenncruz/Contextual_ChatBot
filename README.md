@@ -1,10 +1,14 @@
-This is a chatbot application that provides users with deeper, personalized responses 
-based on the capabilities of large language models processed by Amazon Bedrock.
+This is a chatbot application that provides users with deeper, personalized responses.
 This chatbot allows a user to have deeper conversations by usage of internal knowledge 
 bases. For example, a user could have a conversation with a chatbot while browsing movies 
 to watch, and a chatbot could suggest movies to a user that are relevant to their previous 
 genres and high ratings. In the real world, chatbots are able to deliver industrial value by
 incorporating information into response generation.
+
+In daily conversations, the process of incorporating information into responses is also
+called "providing context". Instead of creating a chatbot that would provide strict, 
+unchanging responses, I decided to understand the internal processes that a chatbot would 
+undergo in order to "provide context" just as we do daily.
 
 # Motive
 
