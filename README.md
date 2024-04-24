@@ -74,15 +74,15 @@ the capabilities of natural language processing models by integrating two key co
 
 retrieval and generation.
 
-* Retrieval:
-At its core, retrieval involves sourcing information from a vast repository of data. In the 
+* **Retrieval**:
+Retrieval involves sourcing information from a vast repository of data. In the 
 context of RAG, this repository could be comprised of texts, articles, databases, or any other form of 
 structured or unstructured data. In this repository, you will notice a selection of PDFs that concern
 Pokemon - that is the topic of choice for this project, but the user is able to replace it with any kind
 of content of their own choice. When prompted with a query or a topic, the system retrieves relevant 
 information from this selection using search and retrieval algorithms.
 
-* Generation:
+* **Generation**:
 Once the relevant information is retrieved, the generation component of RAG comes into
 play. Rather than simply presenting the retrieved information as-is, the system employs natural
 language generation techniques to create new content based on the retrieved information. This
