@@ -99,9 +99,11 @@ that will come with development and deployment. The services provided by AWS all
 manage their created application using tools in conjunction with one another. In this project, the following
 services are used to mirror the above workflows:
 
-* Amazon S3 - Data Source
-* Amazon OpenSearch - Knowledge base's Vector Store
-* Amazon Bedrock + AWS Lambda - Embeddings Model
+* Amazon S3 - for storing data
+* Amazon Bedrock - provides powerful searching and indexing for processing of data into word embeddings
+* Amazon OpenSearch - usage of a vector store, which represents word embeddings as vectors in order to
+  represent the semantic content of the data source
+* AWS Lambda and AWS CloudFormation - used for API calls to Amazon Bedrock and resource provisioning
 
 # *Setup Instructions*
 
