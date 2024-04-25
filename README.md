@@ -10,15 +10,12 @@ called "providing context". Instead of creating a chatbot that would provide str
 unchanging responses, I decided to understand the internal processes that a chatbot would 
 undergo in order to "provide context" just as we do daily.
 
-# Motive
+# Behind Microservices
 
 The problem of managing the development and deployment of large applications is addressed by 
 Amazon Web Services (AWS). AWS aims to streamline the development and deployment process by 
 employing the Microservices model . The model involves breaking down the one large application 
 into smaller, independent services that work together to fulfill the developer's intended function. 
-
-I wanted to learn about LLMs and RAG while learning more about the AWS Microservices out there,
-so I decided to start this project.
 
 The microservice model allows for these advantages:
 
