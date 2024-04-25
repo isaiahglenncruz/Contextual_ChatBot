@@ -9,6 +9,7 @@ Parameters:
     Default: ''
 
 Resources:
+  # IAM role for Lambda's API call
   LambdaExecutionRoleForKnowledgeBase:
     Type: AWS::IAM::Role
     Properties:
@@ -24,6 +25,7 @@ Resources:
       Path: /
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      # Policies for accessing Bedrock functionalities
       Policies:
         - PolicyName: KnowledgeBaseExecutionPermissions
           PolicyDocument:
@@ -36,6 +38,7 @@ Resources:
                   - 'bedrock:RetrieveAndGenerate'
                 Resource: '*'
 
+  # Lambda Layer for Bedrock's Knowledge Base
   DeployKnowledgeBaseLambdaLayer:
     Type: AWS::Lambda::LayerVersion
     Properties:
@@ -49,33 +52,35 @@ Resources:
         - python3.11
         - python3.10
 
+  # Lambda function for invoking Knowledge Base
   DeployKnowledgeBaseLambda:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: InvokeKnowledgeBase
       Code:
         ZipFile: |
+          # importing necessary libraries
           import os
           import boto3
           import random
           import string
 
+          # creating Python boto3 session and retrieving region
           boto3_session = boto3.session.Session()
           region = boto3_session.region_name
 
-          # create a boto3 bedrock client
+          # creating a boto3 client for Bedrock
           bedrock_agent_runtime_client = boto3.client('bedrock-agent-runtime')
 
-          # get knowledge base id from environment variable
+          # retrieving Knowledge Base ID
           kb_id = os.environ.get("KNOWLEDGE_BASE_ID")
-          #print (kb_id)
 
-          # declare model id for calling RetrieveAndGenerate API
+          # declaring variable: model ID for calling RetrieveAndGenerate API
           model_id = "anthropic.claude-instant-v1"
           model_arn = f'arn:aws:bedrock:{region}::foundation-model/{model_id}'
 
+          # retrieve and generate response
           def retrieveAndGenerate(input, kbId, model_arn, sessionId):
-              #print(input, kbId, model_arn, sessionId)
               if sessionId != "":
                   return bedrock_agent_runtime_client.retrieve_and_generate(
                       input={
@@ -104,20 +109,18 @@ Resources:
                       }
                   )
 
+          # Lambda handler function
           def lambda_handler(event, context):
               query = event["question"]
               sessionId = event["sessionId"]
               response = retrieveAndGenerate(query, kb_id, model_arn, sessionId)
               generated_text = response['output']['text']
               sessionId = response['sessionId']
-              print (generated_text)
-              print (sessionId)
               
               return {
                   'statusCode': 200,
                   'body': {"question": query.strip(), "answer": generated_text.strip(), "sessionId":sessionId}
               }
-              
       Description: Create KnowledgeBase Lambda
       Handler: index.lambda_handler
       MemorySize: 256
@@ -126,6 +129,7 @@ Resources:
       Timeout: 60
       Layers: 
         - !Ref DeployKnowledgeBaseLambdaLayer
+      # environment variables
       Environment:
         Variables:
           KNOWLEDGE_BASE_ID: !Ref KnowledgeBaseID
