@@ -91,8 +91,8 @@ enables RAG to provide comprehensive and contextually relevant responses to quer
 it a powerful tool for tasks ranging from information retrieval and summarization to creative 
 writing and content generation.
 
-![sumgpt](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/49db6ca1-3902-42ef-ba4a-f6d87b7200fb)
 <sub>From Amazon Web Services</sub>
+![sumgpt](https://github.com/isaiahglenncruz/Contextual_ChatBot/assets/72627685/49db6ca1-3902-42ef-ba4a-f6d87b7200fb)
 
 The above image is a detailed illustration of each individual component of the User's prompt-to-response 
 use of ARG architecture. The complexity of using the RAG approach comes from managing the complexities 
