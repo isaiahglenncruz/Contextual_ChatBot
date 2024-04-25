@@ -202,7 +202,8 @@ to set up an environment for the Streamlit application to run on.
 
 `python -m streamlit run chatbot.py`
 
-to open an application hosted by Streamlit in your Internet browser.
+to open an application hosted by Streamlit in your Internet browser, with the following 
+title and prompt.
 
 ![typeshi](https://github.com/isaiahglenncruz/RAG_Chatbot/assets/72627685/7fd0d7fd-330e-4284-88f5-a9826c9b5e26)
 
