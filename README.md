@@ -10,7 +10,7 @@ called "providing context". Instead of creating a chatbot that would provide str
 unchanging responses, I decided to understand the internal processes that a chatbot would 
 undergo in order to "provide context" just as we do daily.
 
-# Behind Microservices
+# About the Microservices Model
 
 The problem of managing the development and deployment of large applications is addressed by 
 Amazon Web Services (AWS). AWS aims to streamline the development and deployment process by 
