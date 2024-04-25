@@ -205,7 +205,8 @@ to open an application hosted by Streamlit in your Internet browser.
 
 ![typeshi](https://github.com/isaiahglenncruz/RAG_Chatbot/assets/72627685/7fd0d7fd-330e-4284-88f5-a9826c9b5e26)
 
+### Clean Up
+
 When you are done using the application, make sure that you navigate through S3, 
 OpenSearch, Lambda, and CloudFront - delete all resources and roles created, these will 
 all incur costs as you leave them running, even if you are not using the application.
-
